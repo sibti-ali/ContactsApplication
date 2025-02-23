@@ -20,7 +20,7 @@ const Add = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post("http://localhost:8800/contacts", contact);
+            await axios.post(`${import.meta.env.VITE_API_BASE_URL}/contacts`, contact);
             navigate("/");
         } catch (error) {
             console.error(error);
