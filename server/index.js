@@ -16,6 +16,7 @@ const db = createConnection({
 });
 
 app.use(express.json());
+
 app.use(cors());
 
 app.get("/contacts", (req, res) => {
