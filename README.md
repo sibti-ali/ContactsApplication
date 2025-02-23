@@ -49,16 +49,16 @@ npm install
 To run the application locally, follow these steps:
 
 0. Setup the .env files inside the client and server folder:
- for .env in server:
+ example .env in server:
 
  ```sh
    DB_HOST= localhost
    DB_USER= root
-   DB_PASSWORD= Letmein@123
+   DB_PASSWORD= password
    DB_NAME=myapplication
    PORT= 8800
    ```
-for .env in client:
+example .env in client:
  ```sh
    VITE_API_BASE_URL=http://localhost:8800
    ```
