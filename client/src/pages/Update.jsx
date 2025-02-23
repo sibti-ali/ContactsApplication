@@ -19,7 +19,7 @@ const Update = () => {
     useEffect(() => {
         const fetchContact = async () => {
             try {
-                const res = await axios.get(`http://localhost:8800/contacts/${id}`);
+                const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/contacts/${id}`);
                 setContact(res.data);
             } catch (error) {
                 console.log(error);
@@ -35,7 +35,7 @@ const Update = () => {
     const handleClick = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`http://localhost:8800/contacts/${id}`, contact);
+            await axios.put(`${import.meta.env.VITE_API_BASE_URL}/contacts/${id}`, contact);
             navigate("/");
         } catch (error) {
             console.log(error);

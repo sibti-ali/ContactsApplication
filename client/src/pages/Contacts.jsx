@@ -14,7 +14,7 @@ const Contacts = () => {
     useEffect(() => {
         const fetchAllContacts = async () => {
             try {
-                const res = await axios.get('http://localhost:8800/contacts');
+                const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/contacts`);
                 setContacts(res.data);
             } catch (error) {
                 console.log(error);
@@ -25,7 +25,7 @@ const Contacts = () => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:8800/contacts/${id}`);
+            await axios.delete(`${import.meta.env.VITE_API_BASE_URL}/contacts/${id}`);
             setContacts(contacts.filter(contact => contact.id !== id));
         } catch (error) {
             console.log(error);
